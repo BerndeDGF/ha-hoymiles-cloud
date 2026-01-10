@@ -1,0 +1,14 @@
+{
+  "domain": "ha_hoymiles_cloud",
+  "name": "Hoymiles Cloud",
+  "codeowners": ["@BerndeDGF"],
+  "config_flow": true,
+  "documentation": "https://github.com/BerndeDGF/ha-hoymiles-cloud",
+  "issue_tracker": "https://github.com/BerndeDGF/ha-hoymiles-cloud/issues",
+  "iot_class": "cloud_polling",
+  "version": "0.1.0",
+  "requirements": [
+    "aiohttp>=3.8.0"
+  ],
+  "icon": "mdi:solar-power-variant"
+} 

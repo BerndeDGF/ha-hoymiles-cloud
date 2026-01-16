@@ -152,12 +152,12 @@ SENSORS = [
         native_unit_of_measurement=UnitOfMass.GRAMS,
         device_class=SensorDeviceClass.WEIGHT,
         state_class=SensorStateClass.TOTAL_INCREASING,
-        value_fn=lambda data: safe_int_convert(data.get("real_time_data", {}).get("co2_emission_reduction", 0)),
+        value_fn=lambda data: safe_int_convert(data.get("real_time_data", {}).get("co2_emission_reduction")),
     ),
     HoymilesSensorDescription(
         key="plant_tree",
         name="Equivalent Trees Planted",
-        value_fn=lambda data: safe_int_convert(data.get("real_time_data", {}).get("plant_tree", 0)),
+        value_fn=lambda data: safe_int_convert(data.get("real_time_data", {}).get("plant_tree")),
     ),
 
     # Energy production - cumulative values
@@ -167,7 +167,7 @@ SENSORS = [
         native_unit_of_measurement=UnitOfEnergy.WATT_HOUR,
         device_class=SensorDeviceClass.ENERGY,
         state_class=SensorStateClass.TOTAL_INCREASING,
-        value_fn=lambda data: safe_int_convert(data.get("real_time_data", {}).get("today_eq", 0)),
+        value_fn=lambda data: safe_int_convert(data.get("real_time_data", {}).get("today_eq")),
     ),
     HoymilesSensorDescription(
         key="month_energy",
@@ -175,7 +175,7 @@ SENSORS = [
         native_unit_of_measurement=UnitOfEnergy.WATT_HOUR,
         device_class=SensorDeviceClass.ENERGY,
         state_class=SensorStateClass.TOTAL_INCREASING,
-        value_fn=lambda data: safe_int_convert(data.get("real_time_data", {}).get("month_eq", 0)),
+        value_fn=lambda data: safe_int_convert(data.get("real_time_data", {}).get("month_eq")),
     ),
     HoymilesSensorDescription(
         key="year_energy",
@@ -183,7 +183,7 @@ SENSORS = [
         native_unit_of_measurement=UnitOfEnergy.WATT_HOUR,
         device_class=SensorDeviceClass.ENERGY,
         state_class=SensorStateClass.TOTAL_INCREASING,
-        value_fn=lambda data: safe_int_convert(data.get("real_time_data", {}).get("year_eq", 0)),
+        value_fn=lambda data: safe_int_convert(data.get("real_time_data", {}).get("year_eq")),
     ),
     HoymilesSensorDescription(
         key="total_energy",
@@ -191,7 +191,7 @@ SENSORS = [
         native_unit_of_measurement=UnitOfEnergy.WATT_HOUR,
         device_class=SensorDeviceClass.ENERGY,
         state_class=SensorStateClass.TOTAL_INCREASING,
-        value_fn=lambda data: safe_int_convert(data.get("real_time_data", {}).get("total_eq", 0)),
+        value_fn=lambda data: safe_int_convert(data.get("real_time_data", {}).get("total_eq")),
     ),
     
     # Daily energy flows                                                                                                              
@@ -201,7 +201,7 @@ SENSORS = [
         native_unit_of_measurement=UnitOfEnergy.WATT_HOUR,
         device_class=SensorDeviceClass.ENERGY,
         state_class=SensorStateClass.TOTAL_INCREASING,
-        value_fn=lambda data: safe_int_convert(data.get("real_time_data", {}).get("reflux_station_data", {}).get("bms_in_eq", 0)),
+        value_fn=lambda data: safe_int_convert(data.get("real_time_data", {}).get("reflux_station_data", {}).get("bms_in_eq")),
     ),
     HoymilesSensorDescription(
         key="battery_discharge_energy_today",
@@ -209,7 +209,7 @@ SENSORS = [
         native_unit_of_measurement=UnitOfEnergy.WATT_HOUR,
         device_class=SensorDeviceClass.ENERGY,
         state_class=SensorStateClass.TOTAL_INCREASING,
-        value_fn=lambda data: safe_int_convert(data.get("real_time_data", {}).get("reflux_station_data", {}).get("bms_out_eq", 0)),
+        value_fn=lambda data: safe_int_convert(data.get("real_time_data", {}).get("reflux_station_data", {}).get("bms_out_eq")),
     ),
 
     # System status information

@@ -286,8 +286,8 @@ class HoymilesAPI:
                     _LOGGER.debug("Real-time station %s data non-JSON response: %s", station_id, resp_text)
                     raise
                 _LOGGER.debug("Real-time station %s data response: %s", station_id, json.dumps(resp, ensure_ascii=False))
-                
-                if resp.get("status") == "0" and resp.get("message") == "success":
+
+                if resp.get("status") == "0" and resp.get("message") == "success" and float(resp.get("data", {}).get("total_eq")) > 0:
                     return resp.get("data", {})
                 else:
                     _LOGGER.error(
